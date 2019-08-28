@@ -1,0 +1,68 @@
+<section class="listOfDrinks">
+  <h1>Lista drinków</h1>
+  <app-search-drink (drinkSearch)="onDrinkSearch($event)"></app-search-drink>
+  <table>
+    <tr>
+      <th>Nazwa</th>
+      <th>Alkohol</th>
+      <th>Lód</th>
+      <th>Sok</th>
+      <th>Dodatki</th>
+      <th>Twoja ocena(1-10)</th>
+    </tr>
+    <tr appBackground *ngFor='let item of drinksArray' [routerLink]="['/create', item.id]">
+      <td>{{item.name}}</td>
+      <td>{{item.alcohol}}</td>
+      <td *ngIf="item.ice ;else noIce">Tak</td>
+      <ng-template #noIce>
+        <td>Nie</td>
+      </ng-template>
+
+      <td *ngIf="item.juice; else noJuice">{{item.juice}}</td>
+      <ng-template #noJuice>
+        <td>-</td>
+      </ng-template>
+
+      <td *ngIf='item.additives; else noAdditives'>{{item.additives}}</td>
+      <ng-template #noAdditives>
+        <td>-</td>
+      </ng-template>
+
+      <td *ngIf='item.mark>10 || item.mark<0; else okMark '>0</td>
+      <ng-template #okMark>
+        <td>{{item.mark}}</td>
+      </ng-template>
+
+      <td class="removeButton" (click)='remove(item, $event)'>Usuń</td>
+    </tr>
+  </table>
+</section>
+<section class="form">
+  <h1>Stwórz nowego drinka</h1>
+  <form (ngSubmit)="onSubmit()" #ref='ngForm'>
+    <label for="name">Nazwa
+      <input type="text" name="name" [(ngModel)]="drink.name" #name='ngModel' required>
+
+      <p class='error' *ngIf="!name.valid && name.dirty">Pole wymagane</p>
+    </label>
+    <label for="alcohol">Alkohol
+      <select [(ngModel)]="drink.alcohol" name="alcohol" required>
+        <option *ngFor="let item of alcohol" [value]=item>{{item}}</option>
+      </select>
+      <p class='error' *ngIf="!name.valid && name.dirty">Pole wymagane</p>
+    </label>
+    <label for="ice">Lód
+      <input type="checkbox" name="ice" [(ngModel)]="drink.ice">
+    </label>
+    <label for="ice">Sok
+      <input type="text" name="juice" [(ngModel)]="drink.juice">
+    </label>
+    <label for="ice">Dodatki
+      <input type="text" name="additives" [(ngModel)]="drink.additives">
+    </label>
+    <label for="ice">Twoja ocena
+      <input min=1 max=10 type="number" name="mark" [(ngModel)]="drink.mark">
+    </label>
+    <button type='submit()' [disabled]="!ref.valid">Dodaj</button>
+  </form>
+</section>

@@ -1,0 +1,16 @@
+<div class="search">
+  <h3>Sortuj</h3>
+  <form [formGroup]="searchForm" novalidate>
+    <input type="text" formControlName="query" placeholder="Szukaj drinka">
+
+    <select formControlName="sort">
+      <option *ngFor="let s of sortBy" [value]="s.value">{{s.label}}</option>
+    </select>
+
+    <select formControlName="order">
+      <option *ngFor="let o of orderBy" [value]="o.value">{{o.label}}</option>
+    </select>
+
+    <button type="button" (click)="search()">Szukaj!</button>
+  </form>
+</div>

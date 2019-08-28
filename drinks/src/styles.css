@@ -1,0 +1,314 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+.wrapper {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to right, #159957, #155799);
+  width: 100%;
+  min-height: 100vh;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.listOfDrinks {
+  width: 97%;
+  margin: auto;
+  padding: 5px;
+}
+
+.listOfDrinks table {
+  width: 100%;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.listOfDrinks table th,
+.listOfDrinks table td {
+  width: calc(100% / 7);
+  padding: 5px 2px;
+}
+
+.listOfDrinks table th {
+  color: rgb(213, 226, 225);
+}
+
+.listOfDrinks table tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.listOfDrinks table th {
+  font-size: 8px;
+}
+
+.listOfDrinks table td {
+  font-size: 7px;
+}
+
+.listOfDrinks h1 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.listOfDrinks h3 {
+  font-size: 14px;
+}
+
+.removeButton {
+  transition: .5s;
+}
+
+.removeButton:hover {
+  color: rgb(4, 255, 66);
+}
+
+label {
+  position: relative;
+}
+
+.error {
+  position: absolute;
+  left: 10%;
+  transform: translateX(-30%);
+  font-size: 8px;
+  padding: 0 5px;
+  background-color: red;
+  color: white;
+  width: 30%;
+
+}
+
+.search {
+  margin: 10px 0;
+
+}
+
+.search input:first-child {
+  display: block;
+  margin: 5px auto;
+}
+
+.search input {
+  background-color: rgba(0, 0, 0, .5);
+  padding: 3px 2px;
+  color: #fff;
+}
+
+.search select {
+  background-color: rgba(0, 0, 0, .2);
+  padding: 3px 2px;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.search button {
+  padding: 3px 2px;
+  margin-left: 5px;
+  background-color: rgba(0, 255, 64, .5);
+  border: none;
+  color: #fff;
+  transition: .5s;
+}
+
+.search button:hover {
+  background-color: rgb(4, 255, 66);
+}
+
+.search h3 {
+  margin-bottom: 5px;
+}
+
+.form {
+  margin-top: 10px;
+  width: 98%;
+  margin: 0 auto;
+}
+
+.form h1 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.form label {
+  position: relative;
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.form input {
+  position: absolute;
+  left: 20vw;
+  background-color: rgba(0, 0, 0, .5);
+  padding: 2px 2px;
+  color: #fff;
+  margin-left: 15vw;
+}
+
+.form select {
+  position: absolute;
+  left: 35vw;
+  background-color: rgba(0, 0, 0, .2);
+  padding: 3px 2px;
+  color: #fff;
+}
+
+.form button {
+  padding: 3px 12px;
+  margin-top: 5px;
+  background-color: rgba(0, 255, 64, .5);
+  border: none;
+  color: #fff;
+  transition: .5s;
+}
+
+
+.form button:hover {
+  background-color: rgb(4, 255, 66);
+}
+
+.form label {
+  margin-left: 5px;
+}
+
+@media (min-width: 411px) and (orientation: portrait) {
+  .listOfDrinks table th {
+    font-size: 10px;
+  }
+
+  .listOfDrinks table td {
+    font-size: 9px;
+  }
+}
+
+@media(min-width: 768px) and (orientation: portrait) {
+  .listOfDrinks table th {
+    font-size: 16px;
+  }
+
+  .listOfDrinks table td {
+    font-size: 14px;
+  }
+
+  .listOfDrinks h1 {
+    font-size: 22px;
+  }
+
+  .listOfDrinks h3 {
+    font-size: 18px;
+  }
+
+  .form h1 {
+    font-size: 22px;
+  }
+
+  .form button {
+    padding: 5px 12px;
+
+  }
+
+  .error {
+    left: 4%;
+    font-size: 10px;
+    width: 15%;
+  }
+
+}
+
+@media(orientation: landscape) {
+  .listOfDrinks table th {
+    font-size: 12px;
+  }
+
+  .listOfDrinks table td {
+    font-size: 10px;
+  }
+
+  .form button {
+    padding: 5px 12px;
+    margin-bottom: 10px;
+  }
+
+  .error {
+    left: 7%;
+    font-size: 10px;
+    width: 25%;
+  }
+}
+
+@media(min-width: 823px) and (orientation: landscape) {
+  .listOfDrinks table th {
+    font-size: 16px;
+  }
+
+  .listOfDrinks table td {
+    font-size: 14px;
+  }
+
+  .error {
+    left: 6%;
+    width: 20%;
+  }
+}
+
+@media(min-width: 1366px) and (orientation: landscape) {
+  .listOfDrinks table th {
+    font-size: 20px;
+  }
+
+  .listOfDrinks table td {
+    font-size: 18px;
+  }
+
+  .listOfDrinks h1 {
+    font-size: 32px;
+  }
+
+  .listOfDrinks h3 {
+    font-size: 28px;
+  }
+
+  .form h1 {
+    font-size: 32px;
+  }
+
+  .search input {
+    padding: 10px 5px;
+  }
+
+  .search select {
+    padding: 10px 5px;
+  }
+
+  .search button {
+    padding: 12px 15px;
+
+  }
+
+  .form input {
+    padding: 10px 5px;
+  }
+
+  .form select {
+    padding: 10px 5px;
+  }
+
+  .form button {
+    padding: 12px 30px;
+  }
+
+  .form label {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .error {
+    left: 6%;
+    font-size: 12px;
+
+  }
+}

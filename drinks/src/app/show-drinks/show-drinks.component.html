@@ -1,0 +1,29 @@
+<section class="form">
+  <h1>Edytuj {{drink.name}}</h1>
+  <form (ngSubmit)="onSubmit()" #ref='ngForm'>
+    <label for="name">Nazwa
+      <input type="text" name="name" [(ngModel)]="drink.name" #name='ngModel' required>
+
+      <p class='error' *ngIf="!name.valid && name.dirty">Pole wymagane</p>
+    </label>
+    <label for="alcohol">Alkohol
+      <select [(ngModel)]="drink.alcohol" name="alcohol">
+        <option *ngFor="let item of alcohol" [value]=item>{{item}}</option>
+      </select>
+    </label>
+    <label for="ice">Lód
+      <input type="checkbox" name="ice" [(ngModel)]="drink.ice">
+    </label>
+    <label for="ice">Sok
+      <input type="text" name="juice" [(ngModel)]="drink.juice">
+    </label>
+    <label for="ice">Dodatki
+      <input type="text" name="additives" [(ngModel)]="drink.additives">
+    </label>
+    <label for="ice">Twoja ocena
+      <input min=1 max=10 type="number" name="mark" [(ngModel)]="drink.mark">
+    </label>
+    <button type='submit()' [disabled]="!ref.valid">Zmień</button>
+  </form>
+  <button routerLink='/create'>Wróć do listy</button>
+</section>
